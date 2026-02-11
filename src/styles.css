@@ -123,3 +123,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* Global Styles */
+:root {
+  --jet: #312f2f;
+  --meant-cream: #e5ece9;
+  --raspberry-plum: #aa4586;
+
+  --bright-green: #72ed42;
+  --raspberry: #d81e5b;
+  --bright-amber: #f0c808;
+
+  --display-font-stack: 'Big Shoulders', -apple-system, sans-serif;
+  --paragraph-font-stack: Urbanist, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--paragraph-font-stack);
+
+  color: var(--jet);
+  background-color: var(--meant-cream);
+}

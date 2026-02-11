@@ -1,0 +1,14 @@
+h1,
+h1 > span {
+  color: var(--Jet, #312f2f);
+  text-align: center;
+  font-family: 'Big Shoulders';
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h1 > span {
+  color: var(--Raspberry-Plum, #aa4586);
+}

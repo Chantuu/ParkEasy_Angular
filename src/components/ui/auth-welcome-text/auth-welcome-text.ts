@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-auth-welcome-text',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './auth-welcome-text.css',
 })
 export class AuthWelcomeText {
-
+  headerText = input.required<string>();
+  paragraphText = input.required<string>();
 }

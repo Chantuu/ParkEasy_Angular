@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: var(--Jet, #312f2f);
+  text-align: center;
+
+  /* Subtitle (App) */
+  font-family: Urbanist;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+p {
+  color: var(--Jet, #312f2f);
+  text-align: center;
+
+  /* Paragraph (App) */
+  font-family: Urbanist;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+}

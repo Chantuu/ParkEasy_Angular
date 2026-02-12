@@ -6,7 +6,7 @@
   class="welcomeTextComponent"
 />
 
-<form action="GET" [formGroup]="this.loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="this.loginForm" (ngSubmit)="onSubmit()">
   <div class="inputGroupContainer">
     <div class="inputFieldContainer">
       <div class="labelContainer">
@@ -51,5 +51,7 @@
   </div>
 
   <button [disabled]="this.loginForm.invalid">Log In</button>
-  <span class="registerLinkText">Don't have an Account? <a>Register here.</a></span>
+  <span class="registerLinkText"
+    >Don't have an Account? <a routerLink="/register">Register here.</a></span
+  >
 </form>

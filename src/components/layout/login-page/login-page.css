@@ -99,5 +99,6 @@ button {
 }
 
 .registerLinkText > a {
+  text-decoration: none;
   color: var(--raspberry-plum);
 }

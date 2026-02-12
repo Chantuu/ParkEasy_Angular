@@ -4,10 +4,11 @@ import { AuthWelcomeText } from '../../ui/auth-welcome-text/auth-welcome-text';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { inputValidityCheck } from '../../../utilities/functions/input-validity-check.function';
 import { passwordValidator } from '../../../utilities/validators/password.validator';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  imports: [Logo, AuthWelcomeText, ReactiveFormsModule],
+  imports: [Logo, AuthWelcomeText, ReactiveFormsModule, RouterLink],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })

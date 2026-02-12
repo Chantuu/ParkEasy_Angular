@@ -1,1 +1,55 @@
-<p>login-page works!</p>
+<app-logo class="logoComponent" />
+
+<app-auth-welcome-text
+  headerText="Welcome Back"
+  paragraphText="Please enter your credentials"
+  class="welcomeTextComponent"
+/>
+
+<form action="GET" [formGroup]="this.loginForm" (ngSubmit)="onSubmit()">
+  <div class="inputGroupContainer">
+    <div class="inputFieldContainer">
+      <div class="labelContainer">
+        <label class="inputLabel" for="emailInput">Email address</label>
+
+        @if (this.inputValidityCheck(this.loginForm.controls.email)) {
+          @if (this.loginForm.controls.email.errors?.['required']) {
+            <span class="labelErrorText">This field is required</span>
+          } @else if (this.loginForm.controls.email.errors?.['email']) {
+            <span class="labelErrorText">Correct email is required</span>
+          }
+        }
+      </div>
+      <input
+        id="emailInput"
+        type="text"
+        placeholder="example@email.com"
+        formControlName="email"
+        [class.invalidInputField]="this.inputValidityCheck(this.loginForm.controls.email)"
+      />
+    </div>
+    <div class="inputFieldContainer">
+      <div class="labelContainer">
+        <label class="inputLabel" for="passwordInput">Password</label>
+
+        @if (this.inputValidityCheck(this.loginForm.controls.password)) {
+          @if (this.loginForm.controls.password.errors?.['required']) {
+            <span class="labelErrorText">This field is required</span>
+          } @else if (this.loginForm.controls.password.errors?.['password']) {
+            <span class="labelErrorText">Current password is weak</span>
+          }
+        }
+      </div>
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="********"
+        formControlName="password"
+        [class.invalidInputField]="this.inputValidityCheck(this.loginForm.controls.password)"
+      />
+    </div>
+  </div>
+
+  <button [disabled]="this.loginForm.invalid">Log In</button>
+  <span class="registerLinkText">Don't have an Account? <a>Register here.</a></span>
+</form>

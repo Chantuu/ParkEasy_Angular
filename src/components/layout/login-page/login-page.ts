@@ -42,18 +42,17 @@ export class LoginPage {
     }),
   });
 
-  // TODO: Implement endpoint functionality
   onSubmit() {
     const formData = this.loginForm.value;
 
-    if (!this.loginForm.invalid && formData.email && formData.password) {
+    if (!this.loginForm.invalid) {
       this._authService
         .signInUser({
           email: formData.email as string,
           password: formData.password as string,
         })
         .subscribe({
-          next: (response) => {
+          next: () => {
             this._router.navigate(['/home']);
           },
           error: (error) => {

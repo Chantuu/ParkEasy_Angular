@@ -4,7 +4,8 @@ import { AuthWelcomeText } from '../../ui/auth-welcome-text/auth-welcome-text';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { inputValidityCheck } from '../../../utilities/functions/input-validity-check.function';
 import { passwordValidator } from '../../../utilities/validators/password.validator';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../services/auth-service';
 
 @Component({
   selector: 'app-login-page',
@@ -18,6 +19,10 @@ export class LoginPage {
    */
   private _formBuilder = inject(FormBuilder);
 
+  private _authService = inject(AuthService);
+
+  private _router = inject(Router);
+
   /**
    * Property containing inputValidityCheck function.
    */
@@ -27,14 +32,34 @@ export class LoginPage {
    * Property containing reactive form representing current login form.
    */
   loginForm = this._formBuilder.group({
-    email: this._formBuilder.control('', { validators: [Validators.required, Validators.email] }),
+    email: this._formBuilder.control('', {
+      validators: [Validators.required, Validators.email],
+      nonNullable: true,
+    }),
     password: this._formBuilder.control('', {
       validators: [Validators.required, passwordValidator],
+      nonNullable: true,
     }),
   });
 
   // TODO: Implement endpoint functionality
   onSubmit() {
-    console.log(this.loginForm.value, this.loginForm.invalid);
+    const formData = this.loginForm.value;
+
+    if (!this.loginForm.invalid && formData.email && formData.password) {
+      this._authService
+        .signInUser({
+          email: formData.email as string,
+          password: formData.password as string,
+        })
+        .subscribe({
+          next: (response) => {
+            this._router.navigate(['/home']);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+        });
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Logo } from '../../ui/logo/logo';
 import { AuthWelcomeText } from '../../ui/auth-welcome-text/auth-welcome-text';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { inputValidityCheck } from '../../../utilities/functions/input-validity-check.function';
 import {
   FormBuilder,
@@ -10,6 +10,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { passwordValidator } from '../../../utilities/validators/password.validator';
+import { AuthService } from '../../../services/auth-service';
 
 @Component({
   selector: 'app-register-page',
@@ -22,6 +23,10 @@ export class RegisterPage {
    * Property containing injected instance of FormBuilder class.
    */
   private _formBuilder = inject(FormBuilder);
+
+  private _authService = inject(AuthService);
+
+  private _router = inject(Router);
 
   /**
    * Property containing inputValidityCheck function.
@@ -41,8 +46,24 @@ export class RegisterPage {
     }),
   });
 
-  // TODO: Implement full submission functionality.
   onSubmit() {
-    console.log(this.registerForm.value, this.registerForm.invalid);
+    const formData = this.registerForm.value;
+
+    if (!this.registerForm.invalid) {
+      this._authService
+        .registerUser({
+          fullName: formData.name as string,
+          email: formData.email as string,
+          password: formData.password as string,
+        })
+        .subscribe({
+          next: () => {
+            this._router.navigate(['/home']);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+        });
+    }
   }
 }

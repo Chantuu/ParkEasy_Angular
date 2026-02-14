@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 30px 0;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.profileTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 4px 0;
+}
+
+.welcomeText {
+  color: var(--jet);
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.userText {
+  color: var(--raspberry-plum);
+  font-family: var(--display-font-stack);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.62px;
+  text-transform: uppercase;
+}

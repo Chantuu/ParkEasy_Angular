@@ -144,3 +144,7 @@ body {
   color: var(--jet);
   background-color: var(--meant-cream);
 }
+
+.globalContainerXMargin {
+  margin: 0 10.209%;
+}

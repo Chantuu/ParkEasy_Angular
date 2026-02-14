@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-nav-bar-link',
+  selector: 'a[navbar-link]',
   imports: [],
   templateUrl: './nav-bar-link.html',
   styleUrl: './nav-bar-link.css',
 })
 export class NavBarLink {
-
+  iconPath = input.required<string>();
 }

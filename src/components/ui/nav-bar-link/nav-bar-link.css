@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--meant-cream);
+
+  /* Apply the SVG as a mask */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* Dynamic Image Source */
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.text {
+  color: var(--meant-cream);
+  font-size: 19px;
+  font-weight: 500px;
+  line-height: normal;
+}

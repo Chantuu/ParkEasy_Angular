@@ -148,3 +148,7 @@ body {
 .globalContainerXMargin {
   margin: 0 10.209%;
 }
+
+.globalContainerXPadding {
+  padding: 0 10.209%;
+}

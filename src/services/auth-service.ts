@@ -4,6 +4,7 @@ import { AuthResponseInterface } from '../utilities/interfaces/responses/auth-re
 import { LoginRequestBodyInterface } from '../utilities/interfaces/request-bodies/login-request-body.interface';
 import { RegisterRequestBodyInterface } from '../utilities/interfaces/request-bodies/register-request-body.interface';
 import { CurrentUserResponseInterface } from '../utilities/interfaces/responses/current-user-response.interface';
+import { UserLogoutResponse } from '../utilities/interfaces/responses/user-logout-response.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +30,7 @@ export class AuthService {
     return this._apiService.sendGetRequest<CurrentUserResponseInterface>('auth/currentUser');
   }
 
-  logOutUser() {}
+  logOutUser() {
+    return this._apiService.sendGetRequest<UserLogoutResponse>('auth/logout');
+  }
 }

@@ -1,1 +1,16 @@
-<p>parking-image works!</p>
+<div class="imageContainer">
+  <img [src]="this.imagePath()" [alt]="this.imageAltText()" />
+  <div class="imageTextContainer">
+    <span class="parkingTitle">{{ this.titleText() }}</span>
+    <div class="parkingInfoContainer">
+      @for (infoText of this.infoTexts(); track $index) {
+        @if ($last) {
+          <span>{{ infoText }}</span>
+        } @else {
+          <span>{{ infoText }}</span>
+          <span>&#9679;</span>
+        }
+      }
+    </div>
+  </div>
+</div>

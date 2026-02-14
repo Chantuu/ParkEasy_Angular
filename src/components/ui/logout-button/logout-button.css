@@ -8,12 +8,6 @@
   height: 38px;
   background-color: var(--jet);
 
-  /* Apply the SVG as a mask
-  -webkit-mask-image: url('/icons/button-icons/logout-icon.svg');
-  mask-image: url('/icons/button-icons/logout-icon.svg');
-  mask-size: contain;
-  mask-repeat: no-repeat; */
-
   /* Apply the SVG as a mask */
   -webkit-mask: url('/icons/button-icons/logout-icon.svg') no-repeat center;
   mask: url('/icons/button-icons/logout-icon.svg') no-repeat center;

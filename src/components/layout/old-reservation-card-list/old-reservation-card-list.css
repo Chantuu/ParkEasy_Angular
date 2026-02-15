@@ -1,0 +1,35 @@
+:host {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+h2 {
+  font-family: var(--display-font-stack);
+  font-size: 45px;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+}
+
+h3 {
+  color: #6b6767;
+  font-family: var(--display-font-stack);
+  font-size: 50px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cardContainer {
+  flex: 1 1 200px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

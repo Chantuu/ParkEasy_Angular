@@ -1,1 +1,16 @@
-<p>old-reservation-card-list works!</p>
+<!-- TODO: Implement amount functionality-->
+<h2>History</h2>
+@if (this.oldReservations().length) {
+  <div class="cardContainer">
+    @for (oldReservation of this.oldReservations(); track oldReservation.id) {
+      <app-old-reservation-card
+        [spotTitle]="oldReservation.parkingSpotName"
+        [status]="oldReservation.status"
+        [dateText]="oldReservation.startTime"
+        [amount]="10.0"
+      />
+    }
+  </div>
+} @else {
+  <h3>No History</h3>
+}

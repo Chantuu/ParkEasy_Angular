@@ -1,1 +1,16 @@
-<p>old-reservation-card works!</p>
+<div class="reservationSpotData">
+  <span class="spotTitle">{{ this.spotTitle() }}</span>
+  <div class="reservationStatus">
+    <span class="dateText">{{ this.returnFormattedDate() }}</span>
+    <span>&#9679;</span>
+    <span
+      [class]="{
+        statusText: true,
+        completed: this.status() === this.ReservationEnum.COMPLETED,
+        cancelled: this.status() === this.ReservationEnum.CANCELLED,
+      }"
+      >{{ this.status() }}</span
+    >
+  </div>
+</div>
+<span class="spotPrice"> &#8382;{{ this.amount() }} </span>

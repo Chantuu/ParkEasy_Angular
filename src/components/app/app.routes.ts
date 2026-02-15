@@ -3,6 +3,7 @@ import { LoginPage } from '../layout/login-page/login-page';
 import { RegisterPage } from '../layout/register-page/register-page';
 import { HomeScreenContainer } from '../layout/home-screen-container/home-screen-container';
 import { authGuard } from '../../guards/auth-guard';
+import { ParkingView } from '../layout/parking-view/parking-view';
 
 export const routes: Routes = [
   {
@@ -19,5 +20,16 @@ export const routes: Routes = [
     path: 'home',
     component: HomeScreenContainer,
     canActivate: [authGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: '/home/parking',
+        pathMatch: 'full',
+      },
+      {
+        path: 'parking',
+        component: ParkingView,
+      },
+    ],
   },
 ];

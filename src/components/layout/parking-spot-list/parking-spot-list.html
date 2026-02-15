@@ -1,1 +1,21 @@
-<p>parking-spot-list works!</p>
+<div class="container">
+  <h2>Available Spots</h2>
+  <div class="parkingSpotCardContainer">
+    <app-parking-spot-card
+      parkingSpotTitle="Spot 1A"
+      [parkingSpotStatus]="ParkingSpotStatus.FREE"
+    />
+    <app-parking-spot-card
+      parkingSpotTitle="Spot 1B"
+      [parkingSpotStatus]="ParkingSpotStatus.TAKEN"
+    />
+    <app-parking-spot-card
+      parkingSpotTitle="Spot 1C"
+      [parkingSpotStatus]="ParkingSpotStatus.RESERVED"
+    />
+    <app-parking-spot-card
+      parkingSpotTitle="Spot 1D"
+      [parkingSpotStatus]="ParkingSpotStatus.FREE"
+    />
+  </div>
+</div>

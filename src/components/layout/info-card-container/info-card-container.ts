@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-info-card-container',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './info-card-container.css',
 })
 export class InfoCardContainer {
-
+  title = input.required<string>();
 }

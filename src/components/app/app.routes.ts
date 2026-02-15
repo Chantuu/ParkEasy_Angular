@@ -5,6 +5,7 @@ import { HomeScreenContainer } from '../layout/home-screen-container/home-screen
 import { authGuard } from '../../guards/auth-guard';
 import { ParkingView } from '../layout/parking-view/parking-view';
 import { ReservationView } from '../layout/reservation-view/reservation-view';
+import { SettingsView } from '../layout/settings-view/settings-view';
 
 export const routes: Routes = [
   {
@@ -34,6 +35,10 @@ export const routes: Routes = [
       {
         path: 'reservation',
         component: ReservationView,
+      },
+      {
+        path: 'settings',
+        component: SettingsView,
       },
     ],
   },

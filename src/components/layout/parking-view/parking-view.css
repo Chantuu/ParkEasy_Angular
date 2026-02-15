@@ -1,0 +1,40 @@
+:host {
+  height: 70vh;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.leftSide {
+  flex: 1 1 763px;
+}
+
+.rightSide {
+  flex: 1 1 367px;
+}
+
+.leftSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.leftSide {
+  gap: 50px;
+}
+
+.rightSide {
+  flex: 1 1 367px;
+  overflow-y: auto;
+  gap: 24px;
+}

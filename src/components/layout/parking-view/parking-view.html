@@ -1,1 +1,22 @@
-<p>parking-view works!</p>
+<div class="mainContainer">
+  <div class="leftSide">
+    <app-parking-image
+      imagePath="/images/car-parking.jpeg"
+      imageAltText="Car Parking Spot"
+      titleText="Vake Park"
+      [infoTexts]="['24/7 Security', 'Open']"
+    />
+    <app-parking-spot-list />
+  </div>
+  <div class="rightSide">
+    <app-info-card-container title="About This Parking Spot">
+      <app-about-parking-content />
+    </app-info-card-container>
+    <app-info-card-container title="Parking Spot Benefits">
+      <app-parking-benefits-content />
+    </app-info-card-container>
+    <app-info-card-container title="Parking Rates">
+      <app-parking-rates-content />
+    </app-info-card-container>
+  </div>
+</div>

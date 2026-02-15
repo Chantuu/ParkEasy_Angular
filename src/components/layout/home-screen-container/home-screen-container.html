@@ -1,1 +1,27 @@
-<p>home-screen-container works!</p>
+<app-top-bar />
+<div class="page">
+  <router-outlet />
+</div>
+<div class="navbar globalContainerXPadding">
+  <a
+    navbar-link
+    iconPath="/icons/nav-icons/home-icon.svg"
+    routerLink="parking"
+    routerLinkActive="activeLink"
+    >Home
+  </a>
+  <a
+    navbar-link
+    iconPath="/icons/nav-icons/reservation-icon.svg"
+    routerLink="reservation"
+    routerLinkActive="activeLink"
+    >Reservation
+  </a>
+  <a
+    navbar-link
+    iconPath="/icons/nav-icons/settings-icon.svg"
+    routerLink="settings"
+    routerLinkActive="activeLink"
+    >Settings
+  </a>
+</div>

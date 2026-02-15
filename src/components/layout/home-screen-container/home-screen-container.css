@@ -1,0 +1,31 @@
+:host {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: var(--jet);
+  height: 100px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activeLink ::ng-deep .icon {
+  background-color: var(--raspberry-plum);
+}
+
+.activeLink ::ng-deep .text {
+  color: var(--raspberry-plum);
+}

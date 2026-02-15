@@ -1,1 +1,16 @@
-<p>reservation-view works!</p>
+<div class="mainContainer">
+  <div class="dataContainer">
+    <h2>Reservation</h2>
+    @let currentReservation = this.activeReservationData();
+    @if (currentReservation) {
+      <app-active-reservation-card
+        [spotTitle]="currentReservation.parkingSpotName"
+        [dateText]="currentReservation.startTime"
+        [amount]="10.0"
+      />
+    } @else {
+      <h3>No Active Reservation</h3>
+    }
+  </div>
+  <app-old-reservation-card-list />
+</div>

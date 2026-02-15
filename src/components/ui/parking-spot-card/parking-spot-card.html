@@ -1,1 +1,19 @@
-<p>parking-spot-card works!</p>
+<div class="spotCardDataContainer">
+  <img src="/icons/parking-spot-icon.svg" alt="" />
+  <div class="spotCardTextContainer">
+    <span class="spotTitle">{{ this.parkingSpotTitle() }}</span>
+    <div class="spotStatusTextContainer">
+      <span
+        id="spotStatus"
+        [class]="{
+          spotFree: this.parkingSpotStatus() === this.ParkingSpotStatusEnum.FREE,
+          spotTaken: this.parkingSpotStatus() === this.ParkingSpotStatusEnum.TAKEN,
+          spotReserved: this.parkingSpotStatus() === this.ParkingSpotStatusEnum.RESERVED,
+        }"
+        >&#9679;</span
+      >
+      <span>{{ this.returnCapitalizedStatusText() }}</span>
+    </div>
+  </div>
+</div>
+<button>Reserve</button>

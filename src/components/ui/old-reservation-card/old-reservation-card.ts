@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { ReservationEnum } from '../../../utilities/enums/reservation-status.enum';
+import { returnFormattedDate } from '../../../utilities/functions/return-formatted-date.function';
 
 @Component({
   selector: 'app-old-reservation-card',
@@ -14,12 +15,5 @@ export class OldReservationCard {
   amount = input.required<number>();
 
   ReservationEnum = ReservationEnum;
-
-  returnFormattedDate() {
-    return new Date(this.dateText()).toLocaleString('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    });
-  }
+  returnFormattedDate = returnFormattedDate;
 }

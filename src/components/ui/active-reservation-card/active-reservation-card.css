@@ -1,0 +1,87 @@
+:host {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 15px -9px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reservationInfoLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spotTitle {
+  font-family: var(--display-font-stack);
+  font-size: 35px;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+.reservationInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+img {
+  height: 32px;
+  width: 32px;
+}
+
+.reservationInfoText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap: 13px;
+}
+
+.amountText {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+button {
+  padding: 8px 86px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+}
+
+.checkInButton {
+  background-color: var(--jet);
+  color: var(--meant-cream);
+}
+
+.cancelButton {
+  border: 1px solid var(--raspberry);
+  color: var(--raspberry);
+}

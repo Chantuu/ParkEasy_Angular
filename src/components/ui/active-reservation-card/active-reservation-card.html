@@ -1,1 +1,20 @@
-<p>active-reservation-card works!</p>
+<div class="leftSide">
+  <h3 class="spotTitle">{{ this.spotTitle() }}</h3>
+  <div class="reservationInfoLayout">
+    <div class="reservationInfoContainer">
+      <img src="/icons/info-icons/calendar-icon.svg" alt="Calendar Icon" />
+      <span class="reservationInfoText">{{ returnFormattedDate(this.dateText()) }}</span>
+    </div>
+    <div class="reservationInfoContainer">
+      <img src="/icons/info-icons/clock-icon.svg" alt="Clock Icon" />
+      <span class="reservationInfoText">{{ returnFormattedTime(this.dateText()) }}</span>
+    </div>
+  </div>
+</div>
+<div class="rightSide">
+  <span class="amountText">Total: &#8382;{{ this.amount() }}</span>
+  <div class="buttonContainer">
+    <button class="cancelButton">Cancel</button>
+    <button class="checkInButton">Check In</button>
+  </div>
+</div>

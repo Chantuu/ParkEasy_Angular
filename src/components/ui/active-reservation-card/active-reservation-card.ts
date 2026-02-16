@@ -11,7 +11,6 @@ import { returnFormattedTime } from '../../../utilities/functions/return-formatt
 export class ActiveReservationCard {
   spotTitle = input.required<string>();
   dateText = input.required<string>();
-  amount = input.required<number>();
 
   returnFormattedDate = returnFormattedDate;
   returnFormattedTime = returnFormattedTime;

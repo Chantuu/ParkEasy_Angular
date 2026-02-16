@@ -3,6 +3,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { PaymentCardForm } from '../../ui/payment-card-form/payment-card-form';
 import { PaymentCard } from '../../ui/payment-card/payment-card';
 import { PaymentCardInterface } from '../../../utilities/interfaces/payment-card.interface';
+import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/payment-card-form.interface';
 
 @Component({
   selector: 'app-settings-view',
@@ -29,6 +30,17 @@ export class SettingsView implements OnInit {
   }
 
   currentPaymentCard = signal<PaymentCardInterface | null>(null);
+
+  onSubmit(formData: PaymentCardFormInterface) {
+    this._paymentCardService.createPaymentCard(formData).subscribe({
+      next: (response) => {
+        this.currentPaymentCard.set(response.data);
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+  }
 
   onDeletePaymentCard() {
     this._paymentCardService.deleteCurrentPaymentCard().subscribe({

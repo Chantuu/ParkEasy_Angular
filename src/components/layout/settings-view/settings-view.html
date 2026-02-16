@@ -12,7 +12,7 @@
         (deletePaymentCard)="onDeletePaymentCard()"
       />
     } @else {
-      <app-payment-card-form />
+      <app-payment-card-form (formSubmitted)="onSubmit($event)" />
     }
   </div>
   <div class="sectionContainer bottomSection">

@@ -1,1 +1,77 @@
-<p>payment-card-form works!</p>
+<form [formGroup]="this.paymentCardForm" (ngSubmit)="onSubmit()">
+  <div class="inputGroupContainer">
+    <div class="inputFieldContainer">
+      <div class="labelContainer">
+        <label class="inputLabel" for="cardNumberInput">Card Number</label>
+      </div>
+      <input
+        id="cardNumberInput"
+        type="text"
+        placeholder="4444111122223333"
+        formControlName="cardNumber"
+        [class.invalidInputField]="
+          this.inputValidityCheck(this.paymentCardForm.controls.cardNumber)
+        "
+      />
+    </div>
+
+    <div class="bottomInputGroupContainer">
+      <div class="inputFieldContainer">
+        <div class="labelContainer">
+          <label class="inputLabel" for="cardExpirationMonthInput">Expiration Month</label>
+        </div>
+        <input
+          id="cardExpirationMonthInput"
+          type="number"
+          placeholder="12"
+          formControlName="cardExpirationMonth"
+          [class.invalidInputField]="
+            this.inputValidityCheck(this.paymentCardForm.controls.cardExpirationMonth)
+          "
+        />
+      </div>
+      <div class="inputFieldContainer">
+        <div class="labelContainer">
+          <label class="inputLabel" for="cardExpirationYearInput">Expiration Year</label>
+        </div>
+        <input
+          id="cardExpirationYearInput"
+          type="number"
+          placeholder="2028"
+          formControlName="cardExpirationYear"
+          [class.invalidInputField]="
+            this.inputValidityCheck(this.paymentCardForm.controls.cardExpirationYear)
+          "
+        />
+      </div>
+      <div class="inputFieldContainer">
+        <div class="labelContainer">
+          <label class="inputLabel" for="ccvInput">CCV</label>
+        </div>
+        <input
+          id="ccvInput"
+          type="number"
+          placeholder="123"
+          formControlName="ccv"
+          [class.invalidInputField]="this.inputValidityCheck(this.paymentCardForm.controls.ccv)"
+        />
+      </div>
+      <div class="inputFieldContainer last">
+        <div class="labelContainer">
+          <label class="inputLabel" for="cardHolderNameInput">Card Holder Name</label>
+        </div>
+        <input
+          id="cardHolderNameInput"
+          type="text"
+          placeholder="Giorgi Tchanturia"
+          formControlName="cardHolderName"
+          [class.invalidInputField]="
+            this.inputValidityCheck(this.paymentCardForm.controls.cardHolderName)
+          "
+        />
+      </div>
+    </div>
+  </div>
+
+  <button [disabled]="this.paymentCardForm.invalid">Log In</button>
+</form>

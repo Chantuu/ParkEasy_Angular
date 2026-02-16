@@ -1,0 +1,87 @@
+:host {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 15px -9px rgba(0, 0, 0, 0.25);
+  padding: 30px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.inputGroupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bottomInputGroupContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputFieldContainer.last {
+  margin-left: auto;
+}
+
+.labelErrorText {
+  margin-left: 8px;
+
+  color: var(--raspberry);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.inputLabel,
+.inputFieldContainer > input::content {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.9;
+}
+
+.inputFieldContainer > input {
+  height: 52px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--jet);
+  background-color: var(--meant-cream);
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+.inputFieldContainer > input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.65;
+}
+
+.inputFieldContainer > input.invalidInputField {
+  border: 1px solid var(--raspberry);
+}
+
+button {
+  display: block;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--jet);
+
+  font-size: 19px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--meant-cream);
+}

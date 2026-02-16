@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { OldReservationCard } from '../../ui/old-reservation-card/old-reservation-card';
-import { ReservationEnum } from '../../../utilities/enums/reservation-status.enum';
-import { ReservationInterface } from '../../../utilities/interfaces/reservation.interface';
+import { InactiveReservationInterface } from '../../../utilities/interfaces/inactive-reservation.interface';
+import { ReservationService } from '../../../services/reservation-service';
 
 @Component({
   selector: 'app-old-reservation-card-list',
@@ -9,8 +9,20 @@ import { ReservationInterface } from '../../../utilities/interfaces/reservation.
   templateUrl: './old-reservation-card-list.html',
   styleUrl: './old-reservation-card-list.css',
 })
-export class OldReservationCardList {
-  oldReservations = signal<ReservationInterface[]>([]);
+export class OldReservationCardList implements OnInit {
+  _reservationService = inject(ReservationService);
 
-  // TODO: Implement proper Reservation Retrieval functionality
+  inactiveReservations = signal<InactiveReservationInterface[]>([]);
+
+  ngOnInit() {
+    this._reservationService.getOldReservations().subscribe({
+      next: (response) => {
+        this.inactiveReservations.set(response.data);
+      },
+      error: (error) => {
+        this.inactiveReservations.set([]);
+        console.error(error);
+      },
+    });
+  }
 }

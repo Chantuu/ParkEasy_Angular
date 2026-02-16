@@ -1,13 +1,12 @@
-<!-- TODO: Implement amount functionality-->
 <h2>History</h2>
-@if (this.oldReservations().length) {
+@if (this.inactiveReservations().length) {
   <div class="cardContainer">
-    @for (oldReservation of this.oldReservations(); track oldReservation.id) {
+    @for (inactiveReservation of this.inactiveReservations(); track inactiveReservation.id) {
       <app-old-reservation-card
-        [spotTitle]="oldReservation.parkingSpotName"
-        [status]="oldReservation.status"
-        [dateText]="oldReservation.startTime"
-        [amount]="10.0"
+        [spotTitle]="inactiveReservation.parkingSpotName"
+        [status]="inactiveReservation.status"
+        [dateText]="inactiveReservation.startTime"
+        [amount]="inactiveReservation.amount"
       />
     }
   </div>

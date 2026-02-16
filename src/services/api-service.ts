@@ -20,4 +20,10 @@ export class ApiService {
       withCredentials: true,
     });
   }
+
+  sendDeleteRequest<ResponseT>(endpointUrl: string) {
+    return this._httpClient.delete<ResponseT>(`${this._apiUrl}/${endpointUrl}`, {
+      withCredentials: true,
+    });
+  }
 }

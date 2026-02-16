@@ -1,1 +1,18 @@
-<p>payment-card works!</p>
+<div class="container">
+  <div class="topSection">
+    <h3 class="cardNumberText">{{ addSpaceInEveryFourLetter(this.cardNumber()) }}</h3>
+  </div>
+  <div class="bottomSection">
+    <div class="contentContainer">
+      <span class="labelText">Card Holder</span>
+      <span class="contentText">{{ this.cardHolderName().toUpperCase() }}</span>
+    </div>
+    <div class="contentContainer last">
+      <span class="labelText">Expires</span>
+      <span class="contentText">{{
+        `${this.expirationMonth()}/${getLastTwoDigits(this.expirationYear())}`
+      }}</span>
+    </div>
+  </div>
+  <button>Delete Payment Card</button>
+</div>

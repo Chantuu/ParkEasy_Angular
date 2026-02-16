@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { addSpaceInEveryFourLetter } from '../../../utilities/functions/add-space-in-every-four-letter.function';
+import { getLastTwoDigits } from '../../../utilities/functions/get-last-two-digits.function';
 
 @Component({
   selector: 'app-payment-card',
@@ -7,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './payment-card.css',
 })
 export class PaymentCard {
+  cardNumber = input.required<string>();
+  cardHolderName = input.required<string>();
+  expirationMonth = input.required<number>();
+  expirationYear = input.required<number>();
 
+  addSpaceInEveryFourLetter = addSpaceInEveryFourLetter;
+  getLastTwoDigits = getLastTwoDigits;
 }

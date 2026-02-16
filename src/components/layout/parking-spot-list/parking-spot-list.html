@@ -4,6 +4,7 @@
     @if (this.parkingSpots().length) {
       @for (parkingSpot of this.parkingSpots(); track parkingSpot.id) {
         <app-parking-spot-card
+          [parkingSpotId]="parkingSpot.id"
           [parkingSpotTitle]="parkingSpot.spotName"
           [parkingSpotStatus]="parkingSpot.status"
         />

@@ -16,4 +16,4 @@
     </div>
   </div>
 </div>
-<button>Reserve</button>
+<button [disabled]="this.disableReserveButton()" (click)="onClick()">Reserve</button>

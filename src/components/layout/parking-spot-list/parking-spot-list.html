@@ -1,21 +1,15 @@
 <div class="container">
   <h2>Available Spots</h2>
   <div class="parkingSpotCardContainer">
-    <app-parking-spot-card
-      parkingSpotTitle="Spot 1A"
-      [parkingSpotStatus]="ParkingSpotStatus.FREE"
-    />
-    <app-parking-spot-card
-      parkingSpotTitle="Spot 1B"
-      [parkingSpotStatus]="ParkingSpotStatus.TAKEN"
-    />
-    <app-parking-spot-card
-      parkingSpotTitle="Spot 1C"
-      [parkingSpotStatus]="ParkingSpotStatus.RESERVED"
-    />
-    <app-parking-spot-card
-      parkingSpotTitle="Spot 1D"
-      [parkingSpotStatus]="ParkingSpotStatus.FREE"
-    />
+    @if (this.parkingSpots().length) {
+      @for (parkingSpot of this.parkingSpots(); track parkingSpot.id) {
+        <app-parking-spot-card
+          [parkingSpotTitle]="parkingSpot.spotName"
+          [parkingSpotStatus]="parkingSpot.status"
+        />
+      }
+    } @else {
+      <h3>No Parking Spots</h3>
+    }
   </div>
 </div>

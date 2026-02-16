@@ -19,6 +19,16 @@ h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  color: #6b6767;
+  font-family: var(--display-font-stack);
+  font-size: 50px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .parkingSpotCardContainer {
   position: absolute;
   top: 79px;

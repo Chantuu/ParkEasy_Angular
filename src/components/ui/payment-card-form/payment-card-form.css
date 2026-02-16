@@ -33,6 +33,10 @@ form {
   margin-left: auto;
 }
 
+.inputFieldContainer.last > input {
+  min-width: 300px;
+}
+
 .labelErrorText {
   margin-left: 8px;
 

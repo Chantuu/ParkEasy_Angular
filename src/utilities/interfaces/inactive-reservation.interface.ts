@@ -1,10 +1,5 @@
-import { ReservationEnum } from '../enums/reservation-status.enum';
+import { ReservationInterface } from './reservation.interface';
 
-export interface InactiveReservationInterface {
-  id: string;
-  userId: string;
-  parkingSpotName: string;
-  startTime: string;
-  status: ReservationEnum;
+export interface InactiveReservationInterface extends ReservationInterface {
   amount: number;
 }

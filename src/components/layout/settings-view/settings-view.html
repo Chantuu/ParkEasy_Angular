@@ -2,12 +2,14 @@
   <div class="sectionContainer">
     <h2 class="sectionTitle">Payment Method</h2>
 
-    @if (this.currentPaymentCard()) {
+    @let currentPaymentCard = this.currentPaymentCard();
+    @if (currentPaymentCard) {
       <app-payment-card
-        cardNumber="************1234"
-        cardHolderName="Giorgi Tchanturia"
-        [expirationMonth]="12"
-        [expirationYear]="2028"
+        [cardNumber]="currentPaymentCard.cardNumber"
+        [cardHolderName]="currentPaymentCard.cardHolderName"
+        [expirationMonth]="currentPaymentCard.cardExpirationMonth"
+        [expirationYear]="currentPaymentCard.cardExpirationYear"
+        (deletePaymentCard)="onDeletePaymentCard()"
       />
     } @else {
       <app-payment-card-form />

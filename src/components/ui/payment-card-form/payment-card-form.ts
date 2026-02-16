@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { inputValidityCheck } from '../../../utilities/functions/input-validity-check.function';
 import { creditCardValidator } from '../../../utilities/validators/credit-card.validator';
 import { fourDigitYearValidator } from '../../../utilities/validators/year.validator';
+import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/payment-card-form.interface';
 
 @Component({
   selector: 'app-payment-card-form',
@@ -14,6 +15,8 @@ export class PaymentCardForm {
   private _formBuilder = inject(FormBuilder);
 
   inputValidityCheck = inputValidityCheck;
+
+  formSubmitted = output<PaymentCardFormInterface>();
 
   paymentCardForm = this._formBuilder.group({
     cardNumber: this._formBuilder.control('', {
@@ -42,8 +45,21 @@ export class PaymentCardForm {
     }),
   });
 
-  // TODO: Implement Payment Card Submission logic
   onSubmit() {
-    console.log(this.paymentCardForm.value, this.paymentCardForm.invalid);
+    const formData = this.paymentCardForm.value;
+
+    const transformedCardExpirationMonth = parseInt(formData.cardExpirationMonth as string);
+    const transformedCardExpirationYear = parseInt(formData.cardExpirationYear as string);
+    const transformedCcv = parseInt(formData.ccv as string);
+
+    if (!this.paymentCardForm.invalid) {
+      this.formSubmitted.emit({
+        cardNumber: formData.cardNumber as string,
+        cardExpirationMonth: transformedCardExpirationMonth,
+        cardExpirationYear: transformedCardExpirationYear,
+        cardHolderName: formData.cardHolderName as string,
+        ccv: transformedCcv,
+      });
+    }
   }
 }

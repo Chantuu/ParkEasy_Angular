@@ -1,0 +1,46 @@
+:host {
+  height: 70vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 64px;
+}
+
+.sectionTitle {
+  font-family: var(--display-font-stack);
+  font-size: 45px;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bottomSection {
+  align-items: start;
+}
+
+button {
+  padding: 15px 85px;
+
+  background: none;
+
+  border: 1px solid var(--raspberry);
+  border-radius: 10px;
+
+  color: var(--raspberry);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: normal;
+}

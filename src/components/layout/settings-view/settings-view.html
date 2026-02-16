@@ -1,1 +1,20 @@
-<p>settings-view works!</p>
+<div class="container">
+  <div class="sectionContainer">
+    <h2 class="sectionTitle">Payment Method</h2>
+
+    @if (this.currentPaymentCard()) {
+      <app-payment-card
+        cardNumber="************1234"
+        cardHolderName="Giorgi Tchanturia"
+        [expirationMonth]="12"
+        [expirationYear]="2028"
+      />
+    } @else {
+      <app-payment-card-form />
+    }
+  </div>
+  <div class="sectionContainer bottomSection">
+    <h2 class="sectionTitle">Account Action</h2>
+    <button>Delete User</button>
+  </div>
+</div>

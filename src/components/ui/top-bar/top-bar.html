@@ -3,7 +3,7 @@
     <img src="/icons/profile-icon.svg" alt="Profile Icon" />
     <div class="profileTextContainer">
       <span class="welcomeText">Welcome back</span>
-      <span class="userText">Mariam Qobalava</span>
+      <span class="userText">{{ this.currentUser()?.fullName }}</span>
     </div>
   </div>
   <button logout (pressed)="onLogoutPress()">Log Out</button>

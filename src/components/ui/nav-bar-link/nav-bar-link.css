@@ -7,8 +7,11 @@
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  width: 4.8vw;
+  height: 4.9vh;
+
   background-color: var(--meant-cream);
 
   /* Apply the SVG as a mask */

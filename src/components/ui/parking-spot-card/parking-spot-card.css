@@ -54,6 +54,10 @@ button {
   line-height: normal;
 }
 
+button:disabled {
+  background-color: var(--jet-disabled);
+}
+
 #spotStatus.spotFree {
   color: var(--bright-green);
 }

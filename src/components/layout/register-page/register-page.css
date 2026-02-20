@@ -63,6 +63,7 @@ form {
 
 .inputLabel,
 .inputFieldContainer > input::content {
+  color: var(--jet);
   font-size: 17px;
   font-weight: 500;
   line-height: normal;
@@ -107,6 +108,10 @@ button {
   color: var(--meant-cream);
 
   margin-bottom: 10px;
+}
+
+button:disabled {
+  background-color: var(--jet-disabled);
 }
 
 .registerLinkText {

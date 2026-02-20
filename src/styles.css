@@ -127,12 +127,16 @@ table {
 /* Global Styles */
 :root {
   --jet: #312f2f;
+  --jet-disabled: #5e5959;
+  --jet-hover: #312f2f;
+  --jet-click: #312f2f;
+
   --meant-cream: #e5ece9;
   --raspberry-plum: #aa4586;
 
   --bright-green: #72ed42;
   --raspberry: #d81e5b;
-  --bright-amber: #f0c808;
+  --bright-amber: #1069e5;
 
   --display-font-stack: 'Big Shoulders', -apple-system, sans-serif;
   --paragraph-font-stack: Urbanist, -apple-system, sans-serif;

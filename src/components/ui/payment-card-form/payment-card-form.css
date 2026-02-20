@@ -89,3 +89,7 @@ button {
   line-height: normal;
   color: var(--meant-cream);
 }
+
+button:disabled {
+  background-color: var(--jet-disabled);
+}

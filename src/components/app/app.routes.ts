@@ -9,6 +9,11 @@ import { SettingsView } from '../layout/settings-view/settings-view';
 
 export const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
     component: LoginPage,
     canActivate: [authGuard],

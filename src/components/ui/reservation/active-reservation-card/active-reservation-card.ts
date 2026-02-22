@@ -1,12 +1,12 @@
 import { Component, inject, input } from '@angular/core';
-import { returnFormattedDate } from '../../../utilities/functions/return-formatted-date.function';
-import { returnFormattedTime } from '../../../utilities/functions/return-formatted-time.function';
-import { PaymentService } from '../../../services/payment-service';
+import { returnFormattedDate } from '../../../../utilities/functions/return-formatted-date.function';
+import { returnFormattedTime } from '../../../../utilities/functions/return-formatted-time.function';
+import { PaymentService } from '../../../../services/payment-service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { HttpErrorResponse } from '@angular/common/http';
-import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
+import { returnToastMessageObject } from '../../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-active-reservation-card',

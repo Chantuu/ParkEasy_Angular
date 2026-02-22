@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TopBar } from '../../ui/top-bar/top-bar';
-import { NavBarLink } from '../../ui/nav-bar-link/nav-bar-link';
+import { TopBar } from '../../../ui/navigation/top-bar/top-bar';
+import { NavBarLink } from '../../../ui/navigation/nav-bar-link/nav-bar-link';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({

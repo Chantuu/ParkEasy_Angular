@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { ReservationEnum } from '../../../utilities/enums/reservation-status.enum';
-import { returnFormattedDate } from '../../../utilities/functions/return-formatted-date.function';
+import { ReservationEnum } from '../../../../utilities/enums/reservation-status.enum';
+import { returnFormattedDate } from '../../../../utilities/functions/return-formatted-date.function';
 
 @Component({
   selector: 'app-old-reservation-card',

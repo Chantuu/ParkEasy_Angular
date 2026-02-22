@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { OldReservationCard } from '../../ui/old-reservation-card/old-reservation-card';
-import { InactiveReservationInterface } from '../../../utilities/interfaces/object-interfaces/inactive-reservation.interface';
-import { ReservationService } from '../../../services/reservation-service';
+import { OldReservationCard } from '../../../ui/reservation/old-reservation-card/old-reservation-card';
+import { InactiveReservationInterface } from '../../../../utilities/interfaces/object-interfaces/inactive-reservation.interface';
+import { ReservationService } from '../../../../services/reservation-service';
 
 @Component({
   selector: 'app-old-reservation-card-list',

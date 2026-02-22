@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { addSpaceInEveryFourLetter } from '../../../utilities/functions/add-space-in-every-four-letter.function';
-import { getLastTwoDigits } from '../../../utilities/functions/get-last-two-digits.function';
+import { addSpaceInEveryFourLetter } from '../../../../utilities/functions/add-space-in-every-four-letter.function';
+import { getLastTwoDigits } from '../../../../utilities/functions/get-last-two-digits.function';
 
 @Component({
   selector: 'app-payment-card',

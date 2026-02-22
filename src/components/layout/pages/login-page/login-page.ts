@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { Logo } from '../../ui/logo/logo';
-import { AuthWelcomeText } from '../../ui/auth-welcome-text/auth-welcome-text';
+import { Logo } from '../../../ui/logo/logo';
+import { AuthWelcomeText } from '../../../ui/auth-welcome-text/auth-welcome-text';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { inputValidityCheck } from '../../../utilities/functions/input-validity-check.function';
-import { passwordValidator } from '../../../utilities/validators/password.validator';
+import { inputValidityCheck } from '../../../../utilities/functions/input-validity-check.function';
+import { passwordValidator } from '../../../../utilities/validators/password.validator';
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../services/auth-service';
+import { AuthService } from '../../../../services/auth-service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { HttpErrorResponse } from '@angular/common/http';
-import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
+import { returnToastMessageObject } from '../../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-login-page',

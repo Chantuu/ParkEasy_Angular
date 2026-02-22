@@ -1,8 +1,8 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { LogoutButton } from '../logout-button/logout-button';
-import { AuthService } from '../../../services/auth-service';
+import { AuthService } from '../../../../services/auth-service';
 import { Router } from '@angular/router';
-import { UserInterface } from '../../../utilities/interfaces/object-interfaces/user.interface';
+import { UserInterface } from '../../../../utilities/interfaces/object-interfaces/user.interface';
 
 @Component({
   selector: 'app-top-bar',

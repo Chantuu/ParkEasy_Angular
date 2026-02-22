@@ -1,5 +1,5 @@
-import { ReservationService } from '../../../services/reservation-service';
-import { ParkingSpotStatusEnum } from './../../../utilities/enums/parking-spot-status.enum';
+import { ReservationService } from '../../../../services/reservation-service';
+import { ParkingSpotStatusEnum } from '../../../../utilities/enums/parking-spot-status.enum';
 import { Component, inject, input } from '@angular/core';
 
 @Component({

@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { LoginPage } from '../layout/login-page/login-page';
-import { RegisterPage } from '../layout/register-page/register-page';
-import { HomeScreenContainer } from '../layout/home-screen-container/home-screen-container';
+import { LoginPage } from '../layout/pages/login-page/login-page';
+import { RegisterPage } from '../layout/pages/register-page/register-page';
+import { HomeScreenContainer } from '../layout/pages/home-screen-container/home-screen-container';
 import { authGuard } from '../../guards/auth-guard';
-import { ParkingView } from '../layout/parking-view/parking-view';
-import { ReservationView } from '../layout/reservation-view/reservation-view';
-import { SettingsView } from '../layout/settings-view/settings-view';
+import { ParkingView } from '../layout/views/parking-view/parking-view';
+import { ReservationView } from '../layout/views/reservation-view/reservation-view';
+import { SettingsView } from '../layout/views/settings-view/settings-view';
 
 export const routes: Routes = [
   {

@@ -1,12 +1,12 @@
-import { PaymentCardService } from './../../../services/payment-card-service';
+import { PaymentCardService } from '../../../../services/payment-card-service';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { PaymentCardForm } from '../../ui/payment-card-form/payment-card-form';
-import { PaymentCard } from '../../ui/payment-card/payment-card';
-import { PaymentCardExtendedInterface } from '../../../utilities/interfaces/object-interfaces/payment-card-extended.interface';
-import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/payment-card-form.interface';
+import { PaymentCardForm } from '../../../ui/payment/payment-card-form/payment-card-form';
+import { PaymentCard } from '../../../ui/payment/payment-card/payment-card';
+import { PaymentCardExtendedInterface } from '../../../../utilities/interfaces/object-interfaces/payment-card-extended.interface';
+import { PaymentCardFormInterface } from '../../../../utilities/interfaces/forms/payment-card-form.interface';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
+import { returnToastMessageObject } from '../../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-settings-view',

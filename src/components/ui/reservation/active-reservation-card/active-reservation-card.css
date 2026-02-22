@@ -73,9 +73,34 @@ button {
 .checkInButton {
   background-color: var(--jet);
   color: var(--meant-cream);
+  transition: var(--transition-hover-background);
+}
+
+.checkInButton:hover {
+  background-color: var(--jet-hover);
+}
+
+.checkInButton:active {
+  background-color: var(--jet-active);
 }
 
 .cancelButton {
   border: 1px solid var(--raspberry);
   color: var(--raspberry);
+  transition: var(--transition-hover-all);
+}
+
+.cancelButton:hover {
+  border-color: var(--raspberry-hover);
+  color: var(--raspberry-hover);
+}
+
+.cancelButton:active {
+  border-color: var(--raspberry-hover);
+  color: var(--raspberry-hover);
+}
+
+.cancelButton,
+.checkInButton {
+  cursor: pointer;
 }

@@ -13,6 +13,7 @@
   height: 4.9vh;
 
   background-color: var(--meant-cream);
+  transition: var(--transition-hover-background);
 
   /* Apply the SVG as a mask */
   -webkit-mask-repeat: no-repeat;
@@ -32,7 +33,41 @@
 
 .text {
   color: var(--meant-cream);
+  transition: var(--transition-hover-text);
+
   font-size: 19px;
   font-weight: 500px;
   line-height: normal;
+}
+
+:host(:hover) .icon {
+  background-color: var(--meant-cream-hover);
+}
+
+:host(:active) .icon {
+  background-color: var(--meant-cream-click);
+}
+
+:host(:hover) .text {
+  color: var(--meant-cream-hover);
+}
+
+:host(:active) .text {
+  color: var(--meant-cream-click);
+}
+
+:host(.activeLink:hover) .icon {
+  background-color: var(--raspberry-plum-hover);
+}
+
+:host(.activeLink:active) .icon {
+  background-color: var(--raspberry-plum-click);
+}
+
+:host(.activeLink:hover) .text {
+  color: var(--raspberry-plum-hover);
+}
+
+:host(.activeLink:active) .text {
+  color: var(--raspberry-plum-click);
 }

@@ -108,9 +108,21 @@ button {
   color: var(--meant-cream);
 
   margin-bottom: 10px;
+
+  cursor: pointer;
+  transition: var(--transition-hover-background);
+}
+
+button:hover {
+  background-color: var(--jet-hover);
+}
+
+button:active {
+  background-color: var(--jet-click);
 }
 
 button:disabled {
+  cursor: default;
   background-color: var(--jet-disabled);
 }
 
@@ -124,4 +136,14 @@ button:disabled {
 .registerLinkText > a {
   text-decoration: none;
   color: var(--raspberry-plum);
+
+  transition: var(--transition-hover-text);
+}
+
+.registerLinkText > a:hover {
+  color: var(--raspberry-plum-hover);
+}
+
+.registerLinkText > a:active {
+  color: var(--raspberry-plum-click);
 }

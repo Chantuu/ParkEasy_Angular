@@ -52,9 +52,21 @@ button {
   font-size: 20px;
   font-weight: 600;
   line-height: normal;
+
+  cursor: pointer;
+  transition: var(--transition-hover-background);
+}
+
+button:hover {
+  background-color: var(--jet-hover);
+}
+
+button:active {
+  background-color: var(--jet-click);
 }
 
 button:disabled {
+  cursor: default;
   background-color: var(--jet-disabled);
 }
 

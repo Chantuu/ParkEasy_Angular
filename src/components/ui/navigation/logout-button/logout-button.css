@@ -7,6 +7,7 @@
   width: 38px;
   height: 38px;
   background-color: var(--jet);
+  cursor: pointer;
 
   /* Apply the SVG as a mask */
   -webkit-mask: url('/icons/button-icons/logout-icon.svg') no-repeat center;
@@ -14,4 +15,14 @@
 
   -webkit-mask-size: contain;
   mask-size: contain;
+
+  transition: var(--transition-hover-background);
+}
+
+.icon:hover {
+  background-color: var(--jet-hover);
+}
+
+.icon:active {
+  background-color: var(--jet-click);
 }

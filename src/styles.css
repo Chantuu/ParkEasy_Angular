@@ -127,19 +127,32 @@ table {
 /* Global Styles */
 :root {
   --jet: #312f2f;
+  --jet-hover: #1d1b1b;
+  --jet-click: #100f0f;
   --jet-disabled: #5e5959;
-  --jet-hover: #312f2f;
-  --jet-click: #312f2f;
 
   --meant-cream: #e5ece9;
+  --meant-cream-hover: #cbd4d0;
+  --meant-cream-click: #b0c2b7;
+
   --raspberry-plum: #aa4586;
+  --raspberry-plum-hover: #8e3a6b;
+  --raspberry-plum-click: #6e2c4f;
 
   --bright-green: #72ed42;
+
   --raspberry: #d81e5b;
+  --raspberry-hover: #b71a4a;
+  --raspberry-active: #8e1435;
+
   --bright-amber: #1069e5;
 
   --display-font-stack: 'Big Shoulders', -apple-system, sans-serif;
   --paragraph-font-stack: Urbanist, -apple-system, sans-serif;
+
+  --transition-hover-text: color 0.2s ease-in-out;
+  --transition-hover-background: background-color 0.2s ease-in-out;
+  --transition-hover-all: all 0.2s ease-in-out;
 }
 
 body {

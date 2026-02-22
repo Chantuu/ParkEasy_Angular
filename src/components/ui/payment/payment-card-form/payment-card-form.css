@@ -94,8 +94,20 @@ button {
   font-weight: 500;
   line-height: normal;
   color: var(--meant-cream);
+
+  cursor: pointer;
+  transition: var(--transition-hover-background);
+}
+
+button:hover {
+  background-color: var(--jet-hover);
+}
+
+button:active {
+  background-color: var(--jet-click);
 }
 
 button:disabled {
+  cursor: default;
   background-color: var(--jet-disabled);
 }

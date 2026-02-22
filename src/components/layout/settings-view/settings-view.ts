@@ -2,7 +2,7 @@ import { PaymentCardService } from './../../../services/payment-card-service';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { PaymentCardForm } from '../../ui/payment-card-form/payment-card-form';
 import { PaymentCard } from '../../ui/payment-card/payment-card';
-import { PaymentCardInterface } from '../../../utilities/interfaces/payment-card.interface';
+import { PaymentCardExtendedInterface } from '../../../utilities/interfaces/object-interfaces/payment-card-extended.interface';
 import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/payment-card-form.interface';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -33,7 +33,7 @@ export class SettingsView implements OnInit {
     });
   }
 
-  currentPaymentCard = signal<PaymentCardInterface | null>(null);
+  currentPaymentCard = signal<PaymentCardExtendedInterface | null>(null);
 
   onSubmit(formData: PaymentCardFormInterface) {
     this._paymentCardService.createPaymentCard(formData).subscribe({

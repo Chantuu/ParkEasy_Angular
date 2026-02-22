@@ -1,7 +1,7 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { OldReservationCardList } from '../old-reservation-card-list/old-reservation-card-list';
 import { ActiveReservationCard } from '../../ui/active-reservation-card/active-reservation-card';
-import { ReservationInterface } from '../../../utilities/interfaces/reservation.interface';
+import { ReservationInterface } from '../../../utilities/interfaces/object-interfaces/reservation.interface';
 import { ReservationService } from '../../../services/reservation-service';
 import { Subscription } from 'rxjs';
 

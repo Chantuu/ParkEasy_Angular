@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api-service';
-import { InactiveReservationsResponseInterface } from '../utilities/interfaces/responses/inactive-reservations-response.interface';
-import { ReservationInterface } from '../utilities/interfaces/reservation.interface';
+import { ReservationInterface } from '../utilities/interfaces/object-interfaces/reservation.interface';
 import { ReservationCreationBodyInterface } from '../utilities/interfaces/request-bodies/reservation-creation-body.interface';
-import { CreateReservationResponseInterface } from '../utilities/interfaces/responses/create-reservation-response.interface';
+import { GenericResponseInterface } from '../utilities/interfaces/responses/generic-response.interface';
+import { InactiveReservationInterface } from '../utilities/interfaces/object-interfaces/inactive-reservation.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -18,15 +18,15 @@ export class ReservationService {
   createActiveReservation(parkingSpotId: string) {
     return this._apiService.sendPostRequest<
       ReservationCreationBodyInterface,
-      CreateReservationResponseInterface
+      GenericResponseInterface<ReservationInterface>
     >('reservation', {
       parkingSpotId,
     });
   }
 
   getOldReservations() {
-    return this._apiService.sendGetRequest<InactiveReservationsResponseInterface>(
-      'reservation/inactive',
-    );
+    return this._apiService.sendGetRequest<
+      GenericResponseInterface<InactiveReservationInterface[]>
+    >('reservation/inactive');
   }
 }

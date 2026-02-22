@@ -1,5 +1,4 @@
 export interface PaymentCardInterface {
-  id: string;
   userId: string;
   cardNumber: string;
   cardExpirationMonth: number;

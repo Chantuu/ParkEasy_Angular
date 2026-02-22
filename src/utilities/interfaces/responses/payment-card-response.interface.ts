@@ -1,6 +1,6 @@
-import { PaymentCardInterface } from '../payment-card.interface';
+import { PaymentCardExtendedInterface } from '../object-interfaces/payment-card-extended.interface';
 
 export interface PaymentCardResponseInterface {
   status: string;
-  data: PaymentCardInterface;
+  data: PaymentCardExtendedInterface;
 }

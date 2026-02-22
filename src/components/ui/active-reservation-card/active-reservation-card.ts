@@ -60,6 +60,8 @@ export class ActiveReservationCard {
                 'Sucessfully checked in reservation!',
               ),
             );
+
+            this.softReloadCurrentRoute();
           },
           error: (error) => {
             const savedError = error.error;

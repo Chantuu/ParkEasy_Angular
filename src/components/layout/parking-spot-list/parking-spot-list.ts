@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ParkingSpotCard } from '../../ui/parking-spot-card/parking-spot-card';
 import { ParkingSpotStatusEnum } from '../../../utilities/enums/parking-spot-status.enum';
 import { Subscription } from 'rxjs';
-import { ParkingSpotInterface } from '../../../utilities/interfaces/parking-spot.interface';
+import { ParkingSpotInterface } from '../../../utilities/interfaces/object-interfaces/parking-spot.interface';
 import { ParkingService } from '../../../services/parking-service';
 
 @Component({

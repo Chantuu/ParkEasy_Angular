@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api-service';
-import { ParkingSpotInterface } from '../utilities/interfaces/parking-spot.interface';
+import { ParkingSpotInterface } from '../utilities/interfaces/object-interfaces/parking-spot.interface';
 
 @Injectable({
   providedIn: 'root',

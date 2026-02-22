@@ -1,4 +1,4 @@
-import { ParkingSpotStatusEnum } from '../enums/parking-spot-status.enum';
+import { ParkingSpotStatusEnum } from '../../enums/parking-spot-status.enum';
 
 export interface ParkingSpotInterface {
   id: string;

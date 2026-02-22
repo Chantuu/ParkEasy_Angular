@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api-service';
 import { PaymentCardResponseInterface } from '../utilities/interfaces/responses/payment-card-response.interface';
-import { DeleteCurrentPaymentCardResponseInterface } from '../utilities/interfaces/responses/delete-current-payment-card-response.interface';
 import { PaymentCardFormInterface } from '../utilities/interfaces/forms/payment-card-form.interface';
+import { GenericResponseInterface } from '../utilities/interfaces/responses/generic-response.interface';
+import { PaymentCardInterface } from '../utilities/interfaces/object-interfaces/payment-card.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class PaymentCardService {
   }
 
   deleteCurrentPaymentCard() {
-    return this._apiService.sendDeleteRequest<DeleteCurrentPaymentCardResponseInterface>(
+    return this._apiService.sendDeleteRequest<GenericResponseInterface<PaymentCardInterface>>(
       'payments/paymentCard',
     );
   }

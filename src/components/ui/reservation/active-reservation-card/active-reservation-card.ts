@@ -7,6 +7,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { HttpErrorResponse } from '@angular/common/http';
 import { returnToastMessageObject } from '../../../../utilities/functions/return-toast-message-object.function';
+import { ReservationService } from '../../../../services/reservation-service';
 
 @Component({
   selector: 'app-active-reservation-card',
@@ -18,6 +19,7 @@ export class ActiveReservationCard {
   _paymentService = inject(PaymentService);
   _router = inject(Router);
   _messageService = inject(MessageService);
+  _reservationService = inject(ReservationService);
 
   spotTitle = input.required<string>();
   dateText = input.required<string>();
@@ -36,7 +38,7 @@ export class ActiveReservationCard {
           ),
         );
 
-        this.softReloadCurrentRoute();
+        this._reservationService.triggerRefresh();
       },
       error: (error: HttpErrorResponse) => {
         const savedError = error.error;
@@ -61,7 +63,7 @@ export class ActiveReservationCard {
               ),
             );
 
-            this.softReloadCurrentRoute();
+            this._reservationService.triggerRefresh();
           },
           error: (error) => {
             const savedError = error.error;
@@ -75,14 +77,6 @@ export class ActiveReservationCard {
       error: (error) => {
         console.error(error);
       },
-    });
-  }
-
-  private softReloadCurrentRoute() {
-    const currentUrl = this._router.url;
-
-    this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this._router.navigate([currentUrl]);
     });
   }
 }

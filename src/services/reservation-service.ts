@@ -4,12 +4,20 @@ import { ReservationInterface } from '../utilities/interfaces/object-interfaces/
 import { ReservationCreationBodyInterface } from '../utilities/interfaces/request-bodies/reservation-creation-body.interface';
 import { GenericResponseInterface } from '../utilities/interfaces/responses/generic-response.interface';
 import { InactiveReservationInterface } from '../utilities/interfaces/object-interfaces/inactive-reservation.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReservationService {
   constructor(private _apiService: ApiService) {}
+
+  private _refreshRequired = new BehaviorSubject<void>(undefined);
+  refreshRequired$ = this._refreshRequired.asObservable();
+
+  triggerRefresh() {
+    this._refreshRequired.next();
+  }
 
   getActiveReservation() {
     return this._apiService.streamData<ReservationInterface | 'null'>('reservation');

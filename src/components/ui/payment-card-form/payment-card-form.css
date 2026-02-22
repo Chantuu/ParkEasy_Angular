@@ -58,6 +58,7 @@ form {
   box-sizing: border-box;
 
   border: 1px solid var(--jet);
+  color: var(--jet);
   background-color: var(--meant-cream);
   border-radius: 10px;
 
@@ -69,6 +70,11 @@ form {
   font-weight: 500;
   line-height: normal;
   opacity: 0.65;
+}
+
+.inputFieldContainer > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .inputFieldContainer > input.invalidInputField {

@@ -156,3 +156,7 @@ body {
 .globalContainerXPadding {
   padding: 0 10.209%;
 }
+
+.black-text-toast .p-toast-detail {
+  color: var(--jet) !important;
+}

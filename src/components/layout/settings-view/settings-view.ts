@@ -4,10 +4,13 @@ import { PaymentCardForm } from '../../ui/payment-card-form/payment-card-form';
 import { PaymentCard } from '../../ui/payment-card/payment-card';
 import { PaymentCardInterface } from '../../../utilities/interfaces/payment-card.interface';
 import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/payment-card-form.interface';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-settings-view',
-  imports: [PaymentCardForm, PaymentCard],
+  imports: [PaymentCardForm, PaymentCard, ToastModule],
   templateUrl: './settings-view.html',
   styleUrl: './settings-view.css',
   host: {
@@ -16,6 +19,7 @@ import { PaymentCardFormInterface } from '../../../utilities/interfaces/forms/pa
 })
 export class SettingsView implements OnInit {
   _paymentCardService = inject(PaymentCardService);
+  _messageService = inject(MessageService);
 
   ngOnInit(): void {
     this._paymentCardService.getCurrentPaymentCard().subscribe({
@@ -34,6 +38,13 @@ export class SettingsView implements OnInit {
   onSubmit(formData: PaymentCardFormInterface) {
     this._paymentCardService.createPaymentCard(formData).subscribe({
       next: (response) => {
+        this._messageService.add(
+          returnToastMessageObject(
+            'success',
+            'Payment Card Added',
+            'Payment card was added successfully!',
+          ),
+        );
         this.currentPaymentCard.set(response.data);
       },
       error: (error) => {
@@ -45,6 +56,13 @@ export class SettingsView implements OnInit {
   onDeletePaymentCard() {
     this._paymentCardService.deleteCurrentPaymentCard().subscribe({
       next: () => {
+        this._messageService.add(
+          returnToastMessageObject(
+            'success',
+            'Payment Card Deleted',
+            'Payment card was deleted successfully!',
+          ),
+        );
         this.currentPaymentCard.set(null);
       },
       error: (error) => {

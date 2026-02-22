@@ -6,14 +6,20 @@ import { inputValidityCheck } from '../../../utilities/functions/input-validity-
 import { passwordValidator } from '../../../utilities/validators/password.validator';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { HttpErrorResponse } from '@angular/common/http';
+import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-login-page',
-  imports: [Logo, AuthWelcomeText, ReactiveFormsModule, RouterLink],
+  imports: [Logo, AuthWelcomeText, ReactiveFormsModule, RouterLink, ToastModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
 export class LoginPage {
+  private _messageService = inject(MessageService);
+
   /**
    * Property containing injected instance of FormBuilder class.
    */
@@ -55,8 +61,12 @@ export class LoginPage {
           next: () => {
             this._router.navigate(['/home']);
           },
-          error: (error) => {
-            console.error(error);
+          error: (error: HttpErrorResponse) => {
+            const savedError = error.error;
+
+            this._messageService.add(
+              returnToastMessageObject('error', 'Invalid Credentails', savedError.message),
+            );
           },
         });
     }

@@ -11,10 +11,21 @@ import {
 } from '@angular/forms';
 import { passwordValidator } from '../../../utilities/validators/password.validator';
 import { AuthService } from '../../../services/auth-service';
+import { ToastModule } from 'primeng/toast';
+import { HttpErrorResponse } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
+import { returnToastMessageObject } from '../../../utilities/functions/return-toast-message-object.function';
 
 @Component({
   selector: 'app-register-page',
-  imports: [Logo, AuthWelcomeText, RouterLink, ɵInternalFormsSharedModule, ReactiveFormsModule],
+  imports: [
+    Logo,
+    AuthWelcomeText,
+    RouterLink,
+    ɵInternalFormsSharedModule,
+    ReactiveFormsModule,
+    ToastModule,
+  ],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css',
 })
@@ -27,6 +38,8 @@ export class RegisterPage {
   private _authService = inject(AuthService);
 
   private _router = inject(Router);
+
+  private _messageService = inject(MessageService);
 
   /**
    * Property containing inputValidityCheck function.
@@ -60,8 +73,12 @@ export class RegisterPage {
           next: () => {
             this._router.navigate(['/home']);
           },
-          error: (error) => {
-            console.error(error);
+          error: (error: HttpErrorResponse) => {
+            const savedError = error.error;
+
+            this._messageService.add(
+              returnToastMessageObject('error', 'Invalid Credentials', savedError.message),
+            );
           },
         });
     }

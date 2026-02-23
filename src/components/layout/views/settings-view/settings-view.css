@@ -47,3 +47,19 @@ button {
   font-weight: 500;
   line-height: normal;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    justify-content: start;
+    gap: 80px;
+  }
+
+  .sectionTitle {
+    font-size: 35px;
+  }
+
+  button {
+    padding: 12px 60px;
+    font-size: 17px;
+  }
+}

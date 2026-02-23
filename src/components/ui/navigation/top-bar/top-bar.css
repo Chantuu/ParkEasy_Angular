@@ -35,3 +35,24 @@
   letter-spacing: 1.62px;
   text-transform: uppercase;
 }
+
+@media (max-width: 1024px) {
+  .profileContainer {
+    height: 65px;
+  }
+
+  .profileTextContainer {
+    justify-content: start;
+    gap: 8px;
+  }
+
+  .welcomeText {
+    margin-top: 6px;
+    font-size: 17px;
+  }
+
+  .userText {
+    font-size: 20px;
+    width: max-content;
+  }
+}

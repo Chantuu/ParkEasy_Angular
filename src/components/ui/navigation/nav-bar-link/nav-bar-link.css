@@ -71,3 +71,14 @@
 :host(.activeLink:active) .text {
   color: var(--raspberry-plum-click);
 }
+
+@media (max-width: 1024px) {
+  .icon {
+    width: 6.2vw;
+    height: 6.2vh;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}

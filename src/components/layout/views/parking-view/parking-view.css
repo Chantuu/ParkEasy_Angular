@@ -38,3 +38,14 @@
   overflow-y: auto;
   gap: 24px;
 }
+
+@media (max-width: 1024px) {
+  .rightSide {
+    flex: 1 1 80%;
+    justify-content: flex-start;
+  }
+
+  :host {
+    height: 100%;
+  }
+}

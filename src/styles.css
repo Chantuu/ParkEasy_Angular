@@ -164,6 +164,10 @@ body {
 
 .globalContainerXMargin {
   margin: 0 10.209%;
+
+  @media (max-width: 1024px) {
+    margin: 0 4%;
+  }
 }
 
 .globalContainerXPadding {

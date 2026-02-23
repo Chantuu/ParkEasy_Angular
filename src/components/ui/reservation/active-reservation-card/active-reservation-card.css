@@ -104,3 +104,30 @@ button {
 .checkInButton {
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  :host {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rightSide {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .reservationInfoLayout {
+    margin-bottom: 0;
+  }
+
+  .buttonContainer {
+    width: 100%;
+  }
+
+  button {
+    flex: 1 1 100%;
+    font-size: 18px;
+  }
+}

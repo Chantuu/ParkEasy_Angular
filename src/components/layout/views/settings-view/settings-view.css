@@ -63,3 +63,28 @@ button {
     font-size: 17px;
   }
 }
+
+@media (max-width: 700px) {
+  :host,
+  .container {
+    height: 98%;
+  }
+
+  :host {
+    margin-top: 10px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  button {
+    padding: 10px 50px;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+}

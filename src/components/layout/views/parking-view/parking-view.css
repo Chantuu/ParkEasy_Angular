@@ -49,3 +49,20 @@
     height: 100%;
   }
 }
+
+@media (max-width: 700px) {
+  :host {
+    overflow-y: auto;
+  }
+
+  .mainContainer {
+    height: 160vh;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rightSide {
+    height: max-content;
+    overflow-y: visible;
+  }
+}

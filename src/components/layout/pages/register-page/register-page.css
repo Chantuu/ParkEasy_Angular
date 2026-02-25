@@ -147,3 +147,31 @@ button:disabled {
 .registerLinkText > a:active {
   color: var(--raspberry-plum-click);
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 2%;
+  }
+
+  .logoComponent {
+    margin-bottom: 25px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  .inputGroupContainer {
+    margin-bottom: 15px;
+  }
+
+  .inputLabel,
+  .inputFieldContainer > input::content,
+  .registerLinkText {
+    font-size: 15px;
+  }
+
+  .inputFieldContainer > input {
+    max-width: 100%;
+  }
+}

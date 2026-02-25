@@ -82,3 +82,14 @@
     font-size: 18px;
   }
 }
+
+@media (max-width: 700px) {
+  .icon {
+    width: 9vw;
+    height: 5vh;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+}

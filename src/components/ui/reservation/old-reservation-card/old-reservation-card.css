@@ -52,3 +52,21 @@
 .reservationStatus > span.cancelled {
   color: var(--raspberry);
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 10px;
+  }
+
+  .spotTitle {
+    font-size: 25px;
+  }
+
+  .spotPrice {
+    font-size: 35px;
+  }
+
+  .reservationStatus > span {
+    font-size: 14px;
+  }
+}

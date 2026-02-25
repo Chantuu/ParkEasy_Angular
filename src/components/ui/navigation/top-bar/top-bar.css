@@ -56,3 +56,22 @@
     width: max-content;
   }
 }
+
+@media (max-width: 700px) {
+  .container {
+    margin-top: 10px;
+  }
+
+  .profileContainer {
+    gap: 6px;
+  }
+
+  .welcomeText {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .userText {
+    font-size: 19px;
+  }
+}

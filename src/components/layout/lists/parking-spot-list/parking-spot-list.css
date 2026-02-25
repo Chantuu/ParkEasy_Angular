@@ -42,3 +42,14 @@ h3 {
   flex-direction: column;
   gap: 25px;
 }
+
+@media (max-width: 700px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .parkingSpotCardContainer {
+    top: 55px;
+    gap: 15px;
+  }
+}

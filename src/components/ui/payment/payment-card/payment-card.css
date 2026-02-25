@@ -71,3 +71,33 @@ button {
   font-weight: 500;
   line-height: normal;
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 20px 15px;
+  }
+
+  .cardNumberText {
+    font-size: 35px;
+  }
+
+  .bottomSection {
+    margin-top: 40px;
+  }
+
+  .labelText {
+    font-size: 0.65rem;
+    letter-spacing: 3.5px;
+  }
+
+  .contentText {
+    font-size: 1.36rem;
+    letter-spacing: 5.5px;
+  }
+
+  button {
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+}

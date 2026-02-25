@@ -39,3 +39,26 @@ h3 {
   text-transform: uppercase;
   text-align: center;
 }
+
+@media (max-width: 700px) {
+  :host {
+    margin-top: 10px;
+  }
+
+  :host,
+  .mainContainer {
+    height: 98%;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 37px;
+  }
+
+  .dataContainer {
+    gap: 20px;
+  }
+}

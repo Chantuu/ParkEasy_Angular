@@ -131,3 +131,45 @@ button {
     font-size: 18px;
   }
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 10px;
+  }
+
+  .leftSide {
+    gap: 14px;
+  }
+
+  .spotTitle {
+    font-size: 25px;
+  }
+
+  .reservationInfoText {
+    font-size: 14px;
+  }
+
+  .reservationInfoContainer {
+    gap: 6px;
+  }
+
+  img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .reservationInfoText {
+    font-size: 14px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

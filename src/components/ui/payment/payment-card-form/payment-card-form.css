@@ -111,3 +111,22 @@ button:disabled {
   cursor: default;
   background-color: var(--jet-disabled);
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 20px 15px;
+  }
+
+  .inputFieldContainer > input {
+    min-width: 100%;
+  }
+
+  .bottomInputGroupContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .inputFieldContainer.last {
+    margin-left: 0;
+  }
+}

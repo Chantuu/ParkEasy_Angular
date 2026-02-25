@@ -18,3 +18,13 @@
   font-weight: 500;
   line-height: normal;
 }
+
+@media (max-width: 700px) {
+  .infoLayoutContainer {
+    margin-top: 15px;
+  }
+
+  .infoContainer > span {
+    font-size: 15px;
+  }
+}

@@ -21,3 +21,13 @@
 .priceText {
   text-align: right;
 }
+
+@media (max-width: 700px) {
+  .infoLayoutContainer {
+    margin-top: 15px;
+  }
+
+  .infoContainer > span {
+    font-size: 15px;
+  }
+}

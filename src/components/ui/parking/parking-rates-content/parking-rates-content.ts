@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './parking-rates-content.html',
   styleUrl: './parking-rates-content.css',
 })
-export class ParkingRatesContent {
-
-}
+export class ParkingRatesContent {}

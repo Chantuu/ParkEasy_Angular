@@ -7,5 +7,8 @@ import { Component, input } from '@angular/core';
   styleUrl: './nav-bar-link.css',
 })
 export class NavBarLink {
+  /**
+   * Input containing the path to the icon image (String).
+   */
   iconPath = input.required<string>();
 }

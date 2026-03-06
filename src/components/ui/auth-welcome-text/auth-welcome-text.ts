@@ -7,6 +7,13 @@ import { Component, input } from '@angular/core';
   styleUrl: './auth-welcome-text.css',
 })
 export class AuthWelcomeText {
+  /**
+   * Input containing header text of the welcome message (String).
+   */
   headerText = input.required<string>();
+
+  /**
+   * Input containing paragraph text of the welcome message (String).
+   */
   paragraphText = input.required<string>();
 }

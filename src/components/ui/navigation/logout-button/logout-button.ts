@@ -10,8 +10,15 @@ import { Component, output } from '@angular/core';
   },
 })
 export class LogoutButton {
+  /**
+   * Output event emitter that emits when the logout button is pressed,
+   * allowing parent components to handle the logout action.
+   */
   pressed = output<void>();
 
+  /**
+   * Function form emmiting pressed event when the logout button is clicked.
+   */
   onClick() {
     this.pressed.emit();
   }

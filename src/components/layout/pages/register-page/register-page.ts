@@ -31,37 +31,58 @@ import { returnToastMessageObject } from '../../../../utilities/functions/return
 })
 export class RegisterPage {
   /**
-   * Property containing injected instance of FormBuilder class.
+   * Injected instance of FormBuilder, used to create reactive form for registration inputs.
    */
   private _formBuilder = inject(FormBuilder);
 
+  /**
+   * Injected instance of AuthService, used to call registerUser method for user registration.
+   */
   private _authService = inject(AuthService);
 
+  /**
+   * Injected instance of Router, used to navigate to home page on successful registration.
+   */
   private _router = inject(Router);
 
+  /**
+   * Injected instance of MessageService, used to show error toast on registration failure.
+   */
   private _messageService = inject(MessageService);
 
   /**
-   * Property containing inputValidityCheck function.
+   * Utility function to check the validity of form inputs, used in the template for dynamic validation feedback.
    */
   inputValidityCheck = inputValidityCheck;
 
   /**
-   * Property containing reactive form representing current register form.
+   * Reactive form group for registration form, with name, email and password controls, each having appropriate validators.
    */
   registerForm = this._formBuilder.group({
     name: this._formBuilder.control('', {
+      // Validators for name field: required and must be at least 3 characters long
       validators: [Validators.required, Validators.minLength(3)],
     }),
-    email: this._formBuilder.control('', { validators: [Validators.required, Validators.email] }),
+    email: this._formBuilder.control('', {
+      // Validators for email field: required and must be a valid email format
+      validators: [Validators.required, Validators.email],
+    }),
     password: this._formBuilder.control('', {
+      // Validators for password field: required and must satisfy custom password rules
       validators: [Validators.required, passwordValidator],
     }),
   });
 
+  /**
+   * /**
+   * Method called on form submission. If form is valid, it calls registerUser
+   *  method of AuthService and navigates to home page on success, or
+   * shows an error toast on failure.
+   */
   onSubmit() {
     const formData = this.registerForm.value;
 
+    // Check if the form is valid before attempting to register the user
     if (!this.registerForm.invalid) {
       this._authService
         .registerUser({
@@ -70,9 +91,11 @@ export class RegisterPage {
           password: formData.password as string,
         })
         .subscribe({
+          // On successful registration, navigate to the home page
           next: () => {
             this._router.navigate(['/home']);
           },
+          // On registration failure, show an error toast with the message
           error: (error: HttpErrorResponse) => {
             const savedError = error.error;
 

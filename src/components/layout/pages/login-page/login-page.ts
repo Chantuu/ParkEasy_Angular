@@ -18,39 +18,55 @@ import { returnToastMessageObject } from '../../../../utilities/functions/return
   styleUrl: './login-page.css',
 })
 export class LoginPage {
+  /**
+   * Injected instance of FormBuilder, used to create reactive form for login inputs.
+   */
   private _messageService = inject(MessageService);
 
   /**
-   * Property containing injected instance of FormBuilder class.
+   * Injected instance of FormBuilder, used to create reactive form for login inputs.
    */
   private _formBuilder = inject(FormBuilder);
 
+  /**
+   * Injected instance of AuthService, used to call signInUser method for user authentication.
+   */
   private _authService = inject(AuthService);
 
+  /**
+   * Injected instance of Router, used to navigate to home page on successful login.
+   */
   private _router = inject(Router);
 
   /**
-   * Property containing inputValidityCheck function.
+   * Utility function to check the validity of form inputs, used in the template for dynamic validation feedback.
    */
   inputValidityCheck = inputValidityCheck;
 
   /**
-   * Property containing reactive form representing current login form.
+   * Reactive form group for login form, with email and password controls,
+   * each having appropriate validators.
    */
   loginForm = this._formBuilder.group({
     email: this._formBuilder.control('', {
+      // Validators for email field: required and must be a valid email format
       validators: [Validators.required, Validators.email],
-      nonNullable: true,
     }),
     password: this._formBuilder.control('', {
+      // Validators for password field: required and must satisfy custom password rules
       validators: [Validators.required, passwordValidator],
-      nonNullable: true,
     }),
   });
 
+  /**
+   * Method called on form submission. If form is valid, it calls signInUser
+   *  method of AuthService and navigates to home page on success, or
+   * shows an error toast on failure.
+   */
   onSubmit() {
     const formData = this.loginForm.value;
 
+    // Check if the form is valid before attempting to sign in the user
     if (!this.loginForm.invalid) {
       this._authService
         .signInUser({
@@ -58,9 +74,11 @@ export class LoginPage {
           password: formData.password as string,
         })
         .subscribe({
+          // On successful login, navigate to the home page
           next: () => {
             this._router.navigate(['/home']);
           },
+          // On login failure, show an error toast with the message
           error: (error: HttpErrorResponse) => {
             const savedError = error.error;
 

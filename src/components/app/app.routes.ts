@@ -8,11 +8,13 @@ import { ReservationView } from '../layout/views/reservation-view/reservation-vi
 import { SettingsView } from '../layout/views/settings-view/settings-view';
 
 export const routes: Routes = [
+  /* Redirect to login page if the path is empty */
   {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full',
   },
+  /* Login and Register routes, protected by authGuard to prevent access when already authenticated */
   {
     path: 'login',
     component: LoginPage,
@@ -23,16 +25,19 @@ export const routes: Routes = [
     component: RegisterPage,
     canActivate: [authGuard],
   },
+  /* Home route with child routes, protected by authGuard to ensure only authenticated users can access */
   {
     path: 'home',
     component: HomeScreenContainer,
     canActivate: [authGuard],
     children: [
+      /* Default child route redirects to parking view */
       {
         path: '',
         redirectTo: '/home/parking',
         pathMatch: 'full',
       },
+      /* Child routes for parking, reservation, and settings views */
       {
         path: 'parking',
         component: ParkingView,

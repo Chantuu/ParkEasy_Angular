@@ -48,6 +48,18 @@ button {
   line-height: normal;
 }
 
+button:hover {
+  cursor: pointer;
+
+  border-color: var(--raspberry-hover);
+  color: var(--raspberry-hover);
+}
+
+button:active {
+  border-color: var(--raspberry-active);
+  color: var(--raspberry-active);
+}
+
 @media (max-width: 1024px) {
   .container {
     justify-content: start;

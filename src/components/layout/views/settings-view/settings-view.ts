@@ -7,6 +7,9 @@ import { PaymentCardFormInterface } from '../../../../utilities/interfaces/forms
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { returnToastMessageObject } from '../../../../utilities/functions/return-toast-message-object.function';
+import { AuthService } from '../../../../services/auth-service';
+import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings-view',
@@ -28,6 +31,10 @@ export class SettingsView implements OnInit {
    * Injected instance of MessageService, used to show success toasts on payment card creation/deletion.
    */
   _messageService = inject(MessageService);
+
+  _authService = inject(AuthService);
+
+  _router = inject(Router);
 
   /**
    * Signal containing the current payment card data, which can be null if there is no payment card on file.
@@ -97,6 +104,29 @@ export class SettingsView implements OnInit {
       // On error, logs the error to the console.
       error: (error) => {
         console.error(error);
+      },
+    });
+  }
+
+  onDeleteUser() {
+    this._authService.deleteUser().subscribe({
+      next: () => {
+        this._messageService.add(
+          returnToastMessageObject(
+            'success',
+            'User Deleted',
+            'Your user account was deleted successfully!',
+          ),
+        );
+
+        this._router.navigate(['/login']);
+      },
+      error: (error) => {
+        const savedError = error.error;
+
+        this._messageService.add(
+          returnToastMessageObject('error', 'Error Deleting User', savedError.message),
+        );
       },
     });
   }

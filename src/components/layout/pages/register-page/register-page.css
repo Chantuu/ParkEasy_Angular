@@ -1,0 +1,177 @@
+:host {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoComponent {
+  margin-bottom: 58px;
+}
+
+.welcomeTextComponent {
+  margin-bottom: 40px;
+}
+
+:host {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoComponent {
+  margin-bottom: 58px;
+}
+
+.welcomeTextComponent {
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.labelErrorText {
+  margin-left: 8px;
+
+  color: var(--raspberry);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.inputLabel,
+.inputFieldContainer > input::content {
+  color: var(--jet);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.9;
+}
+
+.inputFieldContainer > input {
+  width: 566px;
+  height: 52px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--jet);
+  background-color: var(--meant-cream);
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+.inputFieldContainer > input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.65;
+}
+
+.inputFieldContainer > input.invalidInputField {
+  border: 1px solid var(--raspberry);
+}
+
+button {
+  display: block;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--jet);
+
+  font-size: 19px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--meant-cream);
+
+  margin-bottom: 10px;
+
+  cursor: pointer;
+  transition: var(--transition-hover-background);
+}
+
+button:hover {
+  background-color: var(--jet-hover);
+}
+
+button:active {
+  background-color: var(--jet-click);
+}
+
+button:disabled {
+  cursor: default;
+  background-color: var(--jet-disabled);
+}
+
+.registerLinkText {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.registerLinkText > a {
+  text-decoration: none;
+  color: var(--raspberry-plum);
+
+  transition: var(--transition-hover-text);
+}
+
+.registerLinkText > a:hover {
+  color: var(--raspberry-plum-hover);
+}
+
+.registerLinkText > a:active {
+  color: var(--raspberry-plum-click);
+}
+
+@media (max-width: 700px) {
+  :host {
+    padding: 2%;
+  }
+
+  .logoComponent {
+    margin-bottom: 25px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  .inputGroupContainer {
+    margin-bottom: 15px;
+  }
+
+  .inputLabel,
+  .inputFieldContainer > input::content,
+  .registerLinkText {
+    font-size: 15px;
+  }
+
+  .inputFieldContainer > input {
+    max-width: 100%;
+  }
+}

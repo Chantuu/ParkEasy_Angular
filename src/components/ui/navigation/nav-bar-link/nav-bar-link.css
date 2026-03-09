@@ -1,0 +1,95 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icon {
+  max-width: 50px;
+  max-height: 50px;
+  width: 4.8vw;
+  height: 4.9vh;
+
+  background-color: var(--meant-cream);
+  transition: var(--transition-hover-background);
+
+  /* Apply the SVG as a mask */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  /* Dynamic Image Source */
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.text {
+  color: var(--meant-cream);
+  transition: var(--transition-hover-text);
+
+  font-size: 19px;
+  font-weight: 500px;
+  line-height: normal;
+}
+
+:host(:hover) .icon {
+  background-color: var(--meant-cream-hover);
+}
+
+:host(:active) .icon {
+  background-color: var(--meant-cream-click);
+}
+
+:host(:hover) .text {
+  color: var(--meant-cream-hover);
+}
+
+:host(:active) .text {
+  color: var(--meant-cream-click);
+}
+
+:host(.activeLink:hover) .icon {
+  background-color: var(--raspberry-plum-hover);
+}
+
+:host(.activeLink:active) .icon {
+  background-color: var(--raspberry-plum-click);
+}
+
+:host(.activeLink:hover) .text {
+  color: var(--raspberry-plum-hover);
+}
+
+:host(.activeLink:active) .text {
+  color: var(--raspberry-plum-click);
+}
+
+@media (max-width: 1024px) {
+  .icon {
+    width: 6.2vw;
+    height: 6.2vh;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .icon {
+    width: 9vw;
+    height: 5vh;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+}

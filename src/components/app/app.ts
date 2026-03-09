@@ -9,5 +9,8 @@ import { Toast } from 'primeng/toast';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('ParkEasy_Angular');
+  /**
+   * Signal containing the title of the web application tab.
+   */
+  protected readonly title = signal('ParkEasy');
 }

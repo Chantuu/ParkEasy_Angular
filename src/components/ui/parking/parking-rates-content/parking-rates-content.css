@@ -1,0 +1,33 @@
+.infoLayoutContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoContainer > span {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.priceText {
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .infoLayoutContainer {
+    margin-top: 15px;
+  }
+
+  .infoContainer > span {
+    font-size: 15px;
+  }
+}

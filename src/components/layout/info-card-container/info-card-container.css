@@ -13,3 +13,17 @@ h2 {
   line-height: normal;
   text-transform: uppercase;
 }
+
+@media (max-width: 700px) {
+  :host {
+    padding: 10px 9px;
+  }
+
+  :host:last-child {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}

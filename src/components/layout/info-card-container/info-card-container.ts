@@ -7,5 +7,8 @@ import { Component, input } from '@angular/core';
   styleUrl: './info-card-container.css',
 })
 export class InfoCardContainer {
+  /**
+   * Input containing title of the info card (String).
+   */
   title = input.required<string>();
 }

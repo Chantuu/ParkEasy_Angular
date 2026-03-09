@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api-service';
 import { LoginRequestBodyInterface } from '../utilities/interfaces/request-bodies/login-request-body.interface';
 import { RegisterRequestBodyInterface } from '../utilities/interfaces/request-bodies/register-request-body.interface';
-import { UserLogoutResponse } from '../utilities/interfaces/responses/user-logout-response.interface';
+import { GenericMessageResponse } from '../utilities/interfaces/responses/generic-message-response.interface';
 import { GenericResponseExtendedInterface } from '../utilities/interfaces/responses/generic-response-extended.interface';
 import { UserInterface } from '../utilities/interfaces/object-interfaces/user.interface';
 import { GenericResponseInterface } from '../utilities/interfaces/responses/generic-response.interface';
@@ -69,6 +69,15 @@ export class AuthService {
    * @returns An Observable that emits the response from the API, which indicates whether the logout was successful.
    */
   logOutUser() {
-    return this._apiService.sendGetRequest<UserLogoutResponse>('auth/logout');
+    return this._apiService.sendGetRequest<GenericMessageResponse>('auth/logout');
+  }
+
+  /**
+   * Method for deleting user. It sens a DELETE request to the backend API to delete current user.
+   *
+   * @returns An Observable that emits the response from the API, which indicates whether user deletion was successful.
+   */
+  deleteUser() {
+    return this._apiService.sendDeleteRequest<GenericMessageResponse>('auth/delete');
   }
 }

@@ -54,7 +54,7 @@ This project was done as part of the **[GITA (Georgia's Innovation and Technolog
 
 Please note, that ESP32 prototype was used for this project, which physically detects 1:42 sized toy cars using HC-SR04 sensors and lights corresponding 5mm RGB LED lamp with corresponding colour.
 
-Detailed information about prototype building will be provided **soon.**
+Detailed information about hardware required for this project can be found [here.](https://github.com/Chantuu/ParkEasy_ESP32)
 
 ## 🚀 Getting Started
 
@@ -70,7 +70,7 @@ These environment variables must be set up in `.env`, which is crucial for the a
 
 _Note: This file must be present in project's root directory._
 
-- `NG_APP_API_URL` - Specifies the backend application url, where this app will connect to.
+- `NG_APP_API_URL` - Specifies the backend application url, where this app will connect to. Example: `http://localhost:3000/api`
 
 ### Installation
 
@@ -136,7 +136,7 @@ Special thanks to **[GITA (Georgia's Innovation and Technology Agency)](https://
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - See the [LICENSE](https://github.com/Chantuu/Angular_Weather_Forecast?tab=MIT-1-ov-file) file for details.
+This project is licensed under the **MIT License** - See the [LICENSE](./LICENSE) file for details.
 
 ## 👨‍💻 Author
 

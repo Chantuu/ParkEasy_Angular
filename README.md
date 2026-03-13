@@ -15,6 +15,7 @@
 - [🛠️ Built With](#️-built-with)
 - [📢 Important Notes](#-important-notes)
   - [About Safari Usage](#about-safari-usage)
+  - [About Backend Render Spin Down](#about-backend-render-spin-down)
 - [🚀 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Environment Variables](#environment-variables)
@@ -62,6 +63,10 @@ Detailed information about hardware required for this project can be found [here
 Also note, when using this application in Safari, due `Cross-Site Tracking` functionality currently implemented cookie authentication does not work.
 
 To fix this issue, navigate to `Safari -> Settings -> Privacy` and disable `Website tracking` functionality. Alternatively, you can use `Chromium` based browsers.
+
+### About Backend Render Spin Down
+
+Also note, due backend API is hosted on Render's free tier, after 15 minute inactivity server `spins down`, which causes data loss and frontent will struggle conne
 
 ## 🚀 Getting Started
 

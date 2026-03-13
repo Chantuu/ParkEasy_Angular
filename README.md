@@ -14,6 +14,7 @@
 - [✨ Features](#-features)
 - [🛠️ Built With](#️-built-with)
 - [📢 Important Notes](#-important-notes)
+  - [About Safari Usage](#about-safari-usage)
 - [🚀 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Environment Variables](#environment-variables)
@@ -55,6 +56,12 @@ This project was done as part of the **[GITA (Georgia's Innovation and Technolog
 Please note, that ESP32 prototype was used for this project, which physically detects 1:42 sized toy cars using HC-SR04 sensors and lights corresponding 5mm RGB LED lamp with corresponding colour.
 
 Detailed information about hardware required for this project can be found [here.](https://github.com/Chantuu/ParkEasy_ESP32)
+
+### About Safari Usage
+
+Also note, when using this application in Safari, due `Cross-Site Tracking` functionality currently implemented cookie authentication does not work.
+
+To fix this issue, navigate to `Safari -> Settings -> Privacy` and disable `Website tracking` functionality. Alternatively, you can use `Chromium` based browsers.
 
 ## 🚀 Getting Started
 

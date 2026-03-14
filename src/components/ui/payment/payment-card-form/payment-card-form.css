@@ -29,12 +29,12 @@ form {
   gap: 6px;
 }
 
-.inputFieldContainer.last {
-  margin-left: auto;
+.bottomInputGroupContainer .inputFieldContainer {
+  width: 20%;
 }
 
-.inputFieldContainer.last > input {
-  min-width: 300px;
+.bottomInputGroupContainer .inputFieldContainer.last {
+  margin-left: auto;
 }
 
 .labelErrorText {
@@ -47,7 +47,7 @@ form {
 
 .inputLabel,
 .inputFieldContainer > input::content {
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: normal;
   opacity: 0.9;
@@ -112,6 +112,13 @@ button:disabled {
   background-color: var(--jet-disabled);
 }
 
+@media (max-width: 1024px) {
+  .bottomInputGroupContainer .inputFieldContainer.last {
+    margin-left: 4%;
+    flex-grow: 1;
+  }
+}
+
 @media (max-width: 700px) {
   :host {
     padding: 20px 15px;
@@ -128,5 +135,14 @@ button:disabled {
 
   .inputFieldContainer.last {
     margin-left: 0;
+  }
+
+  .bottomInputGroupContainer .inputFieldContainer {
+    width: unset;
+  }
+
+  .bottomInputGroupContainer .inputFieldContainer.last {
+    flex-grow: unset;
+    margin-left: unset;
   }
 }
